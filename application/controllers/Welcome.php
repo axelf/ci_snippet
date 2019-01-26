@@ -13,7 +13,7 @@ class Welcome extends Welcome_Base {
 		$this->form_validation->add_validation_group('foo1');
 		
 		if (method_exists($this, 'before_validation')) {
-			$this->step3_before_validation();
+			$this->before_validation();
 		}
 		
 		if ($this->form_validation->run() == TRUE) {
@@ -23,7 +23,7 @@ class Welcome extends Welcome_Base {
 		$this->load->view('welcome_message');
 	}
 
-	public function step3_before_validation() {
+	public function before_validation() {
 		if (1 == 2) {
 			$this->form_validation->add_validation_group('foo2');
 		}
